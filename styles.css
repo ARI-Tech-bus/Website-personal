@@ -69,9 +69,9 @@
     background-color: #444;
     top: 100%;
     left: 0;
-    min-width: 120px;
+    min-width: 100px;
     z-index: 1;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
   }
   
@@ -293,53 +293,4 @@
     padding: 15px 0;
     margin-top: 50px;
   }
-
-  /* RESPONSIVE LAYOUT */
-@media (max-width: 768px) {
-  .intro,
-  .tentang-saya {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .profile-img,
-  .rounded-img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-  }
-
-  .bio-img {
-    text-align: center;
-  }
-
-  .container {
-    grid-template-columns: 1fr !important;
-  }
-
-  table th, table td {
-    padding: 8px;
-    font-size: 12px;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .form-kontak input,
-  .form-kontak textarea {
-    font-size: 16px;
-  }
-
-  .main-content {
-    padding: 0 10px;
-  }
-
-  iframe {
-    height: 200px;
-  }
-}
-
   
