@@ -13,11 +13,6 @@ body {
   animation: fadeIn 1s ease-in;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 /* Animasi */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
@@ -48,8 +43,8 @@ header {
   display: flex;
   justify-content: center;
   list-style: none;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .navbar a {
@@ -105,21 +100,29 @@ header {
 }
 
 @keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Intro */
 .intro {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 30px;
   margin-bottom: 40px;
 }
 
 .profile-img {
-  width: 250px;
-  height: 300px;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -141,23 +144,25 @@ header {
 /* Tentang Saya */
 .tentang-saya {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 50px;
   gap: 30px;
 }
 
-.bio {
-  flex: 1;
+.bio, .bio-img {
+  flex: 1 1 100%;
 }
 
 .bio-img {
-  flex: 1;
-  text-align: right;
+  text-align: center;
 }
 
 .rounded-img {
-  max-width: 300px;
+  max-width: 100%;
+  width: 300px;
+  height: auto;
   border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0,0,0,0.2);
   transition: transform 0.3s;
@@ -246,19 +251,11 @@ table th {
   margin-bottom: 50px;
 }
 
-.hubungi .container {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
 .form-kontak {
   display: flex;
   flex-direction: column;
   gap: 12px;
   flex: 1;
-  min-width: 280px;
 }
 
 .form-kontak input,
@@ -286,7 +283,6 @@ table th {
 .maps-box {
   margin-top: 20px;
   flex: 1;
-  min-width: 280px;
 }
 
 .lokasi-keterangan {
@@ -304,12 +300,10 @@ footer {
   margin-top: 50px;
 }
 
-/* Media Queries untuk HP/Tablet */
+/* Responsive */
 @media (max-width: 768px) {
-  .intro,
-  .tentang-saya {
+  .intro, .tentang-saya {
     flex-direction: column;
-    align-items: center;
     text-align: center;
   }
 
@@ -317,22 +311,14 @@ footer {
     text-align: center;
   }
 
-  .navbar .nav-list {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  h2 {
-    font-size: 24px;
-  }
-
-  .main-content {
-    padding: 0 10px;
+  .rounded-img, .profile-img {
+    width: 90%;
+    max-width: 300px;
+    margin: auto;
   }
 
   table th, table td {
-    font-size: 12px;
+    font-size: 14px;
     padding: 8px;
   }
 }
