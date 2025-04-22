@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>website Ari Zakaria</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -28,7 +28,7 @@
 
   <main class="main-content">
 
-    <section class="intro">
+    <section class="intro scroll-fade">
       <div class="foto">
         <img src="WhatsApp Image 2025-04-21 at 13.38.33.jpeg" alt="Foto Ari Zakaria" class="profile-img">
       </div>
@@ -38,18 +38,22 @@
       </div>
     </section>
 
-    <section class="tentang-saya">
+    <section class="tentang-saya scroll-fade">
       <div class="bio">
+        <div class="tentang-saya">
+          <div class="tentang-saya-teks">
         <h2>Tentang Saya</h2>
         <p>Halo! Nama saya Ari Zakaria, umur saya 19 tahun. Saya tinggal di Desa Ketileng, Kecamatan Malo, Kabupaten Bojonegoro.</p>
         <p>Sekarang saya sedang melanjutkan studi di Universitas Nahdlatul Ulama Sunan Giri Bojonegoro, dan sedang belajar membuat website data diri.</p>
       </div>
+    </div>
+  </div>
       <div class="bio-img">
         <img src="WhatsApp Image 2025-04-21 at 14.49.46.jpeg" alt="Foto Ari Zakaria" class="rounded-img">
       </div>
     </section>
 
-    <section class="portofolio">
+    <section class="portofolio scroll-fade">
       <h2>Portofolio</h2>
       <table>
         <thead>
@@ -83,7 +87,7 @@
       </table>
     </section>
 
-    <section class="opini">
+    <section class="opini scroll-fade">
         <h2>Opini</h2>
         <div class="container">
           <div class="card">
@@ -121,11 +125,12 @@
               <img src="gambar 6.jpg" alt="Opini 6" />
             </div>
             <div class="penjelasan">Budaya lokal harus tetap hidup di tengah globalisasi.</div>
+           </div>
           </div>
-        </div>
       </section>
 
-  <section class="hubungi">
+  <section class="hubungi scroll-fade">
+    <div class="section-box">
     <h2>Hubungi Saya</h2>
     <div class="container">
       <form class="form-kontak">
@@ -135,7 +140,7 @@
         <textarea placeholder="Isi"></textarea>
         <button type="submit">Kirim</button>
       </form>
-      <div class="maps-box">
+      <div class="maps-box scroll-fade">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.631032198037!2d111.876506!3d-7.168789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78b0b7e5e5e5e5%3A0x5e5e5e5e5e5e5e5e!2sDesa%20Ketileng%2C%20Kecamatan%20Malo%2C%20Kabupaten%20Bojonegoro!5e0!3m2!1sid!2sid!4v1610000000000!5m2!1sid!2sid" 
           width="100%" 
@@ -147,6 +152,7 @@
         </iframe>
         <p class="lokasi-keterangan">🧭 TIMUR POM PERTASHOP 5P.621.09</p>
       </div>
+      </div>
     </div>
   </section>
   </main>
@@ -155,5 +161,21 @@
     <p>&copy; 2025 By Ari Zakaria</p>
   </footer>
 
+  <script>
+    const elements = document.querySelectorAll('.scroll-fade');
+  
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, {
+      threshold: 0.2
+    });
+  
+    elements.forEach(el => observer.observe(el));
+  </script>
+  
 </body>
 </html>
